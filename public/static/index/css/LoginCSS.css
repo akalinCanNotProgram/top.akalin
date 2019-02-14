@@ -1,0 +1,96 @@
+*{
+	margin:0;
+	border:0;
+}
+html,body{
+	font-family:'Georgia', Georgia, 'Times New Roman', Times, 'Microsoft YaHei', SimSun, SimHei, serif;
+	height:100%;
+}
+div{
+	display:block;
+}
+.BG{
+	height:100%;
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+.LoginPanel{
+	border:2px solid rgba(63,109,207,0.5);
+	border-radius:25px;
+	position:absolute;
+	width:400px;
+	height:360px;
+	background:rgba(112,190,254,0);
+	margin-top:10%;
+	margin-left:30%;
+}
+.login-logo{
+	border-bottom:1px solid rgba(63,109,207,0.5);
+	width:100%;
+	height:126px;
+	opacity:0.8;
+}
+.login-logo img{
+	height:126px;
+}
+.LoginPanel form{
+	text-align:left;
+	position:absolute;
+	width:100%;
+	height:192px;
+}
+.Login-input{
+	position:relative;
+	width:71%;
+	height:30px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+}
+.Login-input input{
+	background:rgba(255,255,255,0.5);
+	font-size:16px;
+	line-height:26px;
+	width:89%;
+	float:right;
+	outline:none;
+	border:1px solid rgba(255,255,255,0.5);
+}
+.Login-input input:focus{
+	background:rgba(255,255,255,0.7);
+	border:1px solid rgb(63,109,207);
+}
+.Login-input img{
+	opacity:0.5;
+	float:left;
+	height:29px;
+	width:29px;
+}
+.Login-submit input{
+	background:rgba(13,26,58,0.5);
+	width:100%;
+	text-align:center;
+	font-size:20px;
+	height:30px;
+	border:none;
+}
+.Login-submit input:hover{
+	background:rgba(90,88,138,0.5);
+}
+.Register{
+	position:relative;
+	width:70%;
+	font-size:13px;
+	line-height:40px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:190px;
+}
+.Register a{
+	text-decoration:none;
+	color:black;
+	margin-left:17px;
+}
+.Register a:hover{
+	color:rgb(345,145,209);
+}

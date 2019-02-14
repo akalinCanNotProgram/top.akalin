@@ -1,0 +1,96 @@
+html,body{
+	border:0;
+	margin:0;
+	font-family:Microsoft YaHei,Arial,Helvetica,sans-serif;
+}
+div{
+	display:block;
+}
+p{
+	display:block;
+	margin:0;
+}
+a{
+	color:black;
+	text-decoration:none;
+}
+.guid-list{
+		background-image:url(../source/images/PageHeader.jpg);
+		border-bottom:5px solid #e5e9ef;
+		border-top:5px solid #e5e9ef;
+		position:absolute;
+		left: auto;
+		top:0;
+		text-align:center;
+		width:100%;	
+		height:170px;
+}
+
+
+.guid-list ul{
+	height:170px;
+	width:1920px;
+	position: relative;
+	top:0;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+.guid-list ul li a{
+	margin:0 2px;
+	text-align:center;
+	line-height:42px;
+	font-size:150%;
+	color:#000;
+}
+.guid-list li{
+	width:42px;
+	height:170px;
+	float:left;
+}
+.guid-list ul li:nth-child(1){
+	margin-left:175px;
+}
+.guid-list ul li:nth-child(2){
+	margin-left:295px;
+}
+.guid-list ul li:nth-child(3){
+	margin-left:235px;
+}
+.guid-list ul li:nth-child(4){
+	margin-left:240px;
+}
+.guid-list ul li:nth-child(5){
+	margin-left:290px;
+}
+.guid-list ul li:nth-child(6){
+	margin-left:290px;
+}
+.guid-list a:link,.guid-list a:visited
+{
+	display:block;
+	text-transform:uppercase;
+}
+
+.guid-list a:hover{
+	background-color:rgba(255,255,255,0.3);
+}
+
+.label-area{
+	font-weight:600;
+	border-top:1px solid #e5e9ef;
+	width:70%;
+	height:100px;
+	margin:220px auto 20px auto;
+}
+.label-area ul{
+	list-style:none;
+	display:inline;
+}
+.label-area ul li{
+	line-height:30px;
+	font-size:15px;
+	float:left;
+	margin:10px 10px;
+}

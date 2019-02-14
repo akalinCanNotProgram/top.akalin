@@ -1,0 +1,490 @@
+html,body{
+	border:0;
+	margin:0;
+	font-family:Microsoft YaHei,Arial,Helvetica,sans-serif;
+}
+div{
+	display:block;
+}
+p{
+	display:block;
+	margin:0;
+}
+a{
+	text-decoration:none;
+	color: black;
+}
+.guid-list{
+		background-image:url(../source/images/PageHeader.jpg);
+		border-bottom:5px solid #e5e9ef;
+		border-top:5px solid #e5e9ef;
+		position:absolute;
+		left: auto;
+		top:0;
+		text-align:center;
+		width:100%;	
+		height:170px;
+}
+
+
+.guid-list ul{
+	height:170px;
+	width:1920px;
+	position: relative;
+	top:0;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+.guid-list ul li a{
+	margin:0 2px;
+	text-align:center;
+	line-height:42px;
+	font-size:150%;
+	color:#000;
+}
+.guid-list li{
+	width:42px;
+	height:170px;
+	float:left;
+}
+.guid-list ul li:nth-child(1){
+	margin-left:175px;
+}
+.guid-list ul li:nth-child(2){
+	margin-left:295px;
+}
+.guid-list ul li:nth-child(3){
+	margin-left:235px;
+}
+.guid-list ul li:nth-child(4){
+	margin-left:240px;
+}
+.guid-list ul li:nth-child(5){
+	margin-left:290px;
+}
+.guid-list ul li:nth-child(6){
+	margin-left:290px;
+}
+.guid-list a:link,.guid-list a:visited
+{
+	display:block;
+	text-transform:uppercase;
+}
+
+.guid-list a:hover{
+	background-color:rgba(255,255,255,0.3);
+}
+.pic-area{
+	text-align:center;
+	width:80%;
+	margin:200px auto 20px auto;
+	
+}
+.pic-area img{
+	border: 5px solid #e5e9ef;
+	max-width:100%;
+	max-height:700px;
+	border-radius:20px;
+}
+.likeANDunlike{
+	color:#666;
+	position:relative;
+	line-height:25px;
+	margin:0 auto;
+	padding:5px;
+	text-align:center;
+}
+.likeANDunlike p a{
+	color:#666;
+}
+.likeANDunlike p a:hover{
+	color:#000;
+}
+.like ,.unlike{
+	background-image:url(../source/images/like&unlike.png);
+	background-repeat:no-repeat;
+	display:inline-block;
+	width:22px;
+	line-height:25px;
+	font-size:14px;
+	padding-left:30px;
+	margin-right:50px;
+	cursor: pointer;
+}
+.views{
+	background-image:url(../source/images/views.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	width:22px;
+	line-height:25px;
+	font-size:14px;
+	padding-left:30px;
+}
+.like:hover{
+	color:#f60;
+	background-position:0 -28px;
+}
+.unlike{
+	background-position:0 -57px;
+}
+.unlike:hover{
+	color:#f60;
+	background-position:0 -87px;
+}
+.likeANDunlike p{
+	display:inline-block;
+	margin-right:50px;
+}
+.talk{
+	position:relative;
+	background-color:#f4f5f7;
+	border:1px solid #e5e9ef;
+	border-radius:4px;
+	overflow:auto;
+	color:#555;
+	width:80%;
+	height:65px;
+	padding:5px 10px;
+	line-height:normal;
+	resize:none;
+	outline:none;
+}
+.talk-submit{
+	width:85px;
+	height:75px;
+	padding:4px 15px;
+	font-size:14px;
+	color:#000;
+	border-radius:4px;
+	text-align:center;
+	cursor:pointer;
+	background-color:#e5e9ef;
+	border:1px solid #e5e9ef;
+	transition:.1s;
+	position:absolute;
+	top:25px;
+	left:85%;
+	outline:none;
+	
+}
+.talk-submit:hover{
+	color:#fff;
+	background-color:rgba(0,0,0,0.5);
+	border-color:black;
+}
+.talk-submit:active{
+	background-color:rgba(0,0,0,0.7);
+}
+.talk:hover,.talk:focus{
+	background-color:#fff;
+	border-color:#000;
+}
+.label-area{
+	font-weight:600;
+	border-top:1px solid #e5e9ef;
+	width:55%;
+	height:100px;
+	margin:20px auto 20px auto;
+}
+.label-area ul{
+	list-style:none;
+	display:inline;
+}
+.label-area ul li{
+	border: 1px solid black;
+	border-radius: 8px;
+	line-height:22px;
+	font-size:15px;
+	float:left;
+	margin:10px 10px;
+
+}
+.labels:hover{
+	background-color: rgb(255, 153, 51);
+}
+.labelsAdd:hover{
+	background: black;
+	color: #fff;
+}
+.labelsAdd a:hover{
+	color: #fff;
+}
+.comment-area{
+	position:relative;
+	margin:20px auto 0 auto;
+	width:60%;
+}
+.unlogin-comment-area{
+	margin:20px auto 0 auto;
+	height: 100px;
+	line-height: 100px;
+	width:60%;
+	text-align: center;
+	border-top:1px solid #e5e9ef;
+}
+.unlogin-comment-area a{
+	color: red;
+	cursor: pointer;
+}
+.list-item{
+	width:100%;
+	margin:20px 0;
+	/*border-top:1px solid #e5e9ef;*/
+}
+.list-none{
+	border-top:1px solid #e5e9ef;
+	border-bottom:1px solid #e5e9ef;
+	width:100%;
+	line-height:200px;
+	height:200px;
+	margin:20px 0;
+	text-align:center;
+	font-size:25px;
+	font-weight:600;
+}
+.user-face{
+	cursor: pointer;
+	float:left;
+	position:relative;
+	margin:24px 30px 0 5px;
+}
+.user-face img{
+	width:48px;
+	height:48px;
+	border-radius:50%;
+}
+.user-face p{
+	color: #fb7299;
+	text-align: center;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 18px;
+	font-family: Microsoft YaHei,Arial,Helvetica,sans-serif;
+
+}
+.comment{
+	margin-left:80px;
+	width:90%;
+	border-top:1px solid #e5e9ef;
+	height:74px;
+	padding:22px 0 14px 0;
+}
+.user-name{
+	color:#6d757a;
+	font-size:12px;
+	font-weight:700;
+	margin-top:0;
+	height:20px;
+	line-height:18px;
+	padding-bottom:4px;
+}
+.user-name a{
+	cursor: pointer;
+}
+.text{
+	font-size:14px;
+	line-height:20px;
+	padding:2px 0;
+}
+.info{
+	color:#99a2aa;
+	font-size:12px;
+	height:26px;
+	line-height:26px;
+}
+.floor{
+	line-height:16px;
+	margin-right:20px;
+	color:#99a2aa;
+}
+.time{
+	line-height:16px;
+	margin-right:20px;
+	color:#99a2aa;
+}
+/*登陆界面*/
+.BG{
+	display: none;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 998;
+	background-color: rgba(0,0,0,.8);
+}
+#galpop-close{
+	position: absolute;
+	cursor: pointer;
+	display: block;
+	z-index: 11;
+	top: 30%;
+	right: 40%;
+	width: 36px;
+	height: 36px;
+	background-image: url("../source/images/btn-close.png");
+	background-repeat: no-repeat;
+}
+.login-panel{
+	font-family:'Georgia', Georgia, 'Times New Roman', Times, 'Microsoft YaHei', SimSun, SimHei, serif;
+	background-color:rgba(255, 204, 153,0.7);
+	border:2px solid rgba(63,109,207,0.5);
+	border-radius:25px;
+	position:fixed;
+	top:30%;
+	right: 40%;
+	width:400px;
+	height:360px;
+}
+.login-logo{
+	border-bottom:1px solid rgba(63,109,207,0.5);
+	width:100%;
+	height:126px;
+	opacity:0.8;
+}
+.login-logo img{
+	height:126px;
+}
+.login-panel form{
+	text-align:left;
+	position:absolute;
+	width:100%;
+	height:192px;
+}
+.Login-input{
+	position:relative;
+	width:71%;
+	height:30px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+}
+.Login-input input{
+	background:rgba(255,255,255,0.5);
+	font-size:16px;
+	line-height:26px;
+	width:89%;
+	float:right;
+	outline:none;
+	border:1px solid rgba(255,255,255,0.5);
+}
+.Login-input input:focus{
+	background:rgba(255,255,255,0.7);
+	border:1px solid rgb(63,109,207);
+}
+.Login-input img{
+	opacity:0.5;
+	float:left;
+	height:29px;
+	width:29px;
+}
+.Login-submit input{
+	background:rgba(13,26,58,0.5);
+	width:100%;
+	text-align:center;
+	font-size:20px;
+	height:30px;
+	border:none;
+}
+.Login-submit input:hover{
+	background:rgba(90,88,138,0.5);
+}
+.Register{
+	position:relative;
+	width:70%;
+	font-size:13px;
+	line-height:40px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:190px;
+}
+.Register a{
+	text-decoration:none;
+	color:black;
+	margin-left:17px;
+}
+.Register a:hover{
+	color:rgb(345,145,209);
+}
+/*分页样式*/
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination ul {
+  display: inline-block;
+  *display: inline;
+  margin-bottom: 0;
+  margin-left: 0;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pagination ul > li {
+  display: inline;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background-color: #f5f5f5;
+}
+
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: #999999;
+  cursor: default;
+}
+
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover,
+.pagination ul > .disabled > a:focus {
+  color: #999999;
+  cursor: default;
+  background-color: transparent;
+}
+
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+  border-left-width: 1px;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+          border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+
+.pagination ul > li:last-child > a,
+.pagination ul > li:last-child > span {
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
