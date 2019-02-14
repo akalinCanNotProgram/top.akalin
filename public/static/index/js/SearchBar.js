@@ -55,6 +55,7 @@ $(".search-input").keyup(
 						// console.log(result.suggestions.length);
 						if(result.statu){
 							// var suggestions=result.suggestions;
+							$(panel).empty();
 							for(var i=0;i<result.suggestions.length;i++){
 								$(panel).append("<li onclick='searchClick(this)'>"+result.suggestions[i]+"</li>");
 								// alert(result.suggestions);
