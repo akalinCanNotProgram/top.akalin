@@ -1,0 +1,98 @@
+{include file='public/top'}
+<link rel="stylesheet" type="text/css" href="__CSS__/slide-style.css">
+<!-- <script src="__JS__/PageUpData.js"></script> -->
+</head>
+<body>
+ {include file='public/header'}
+ 
+ <section class="flash">
+	<div id="slider-wrap">
+	  <ul id="slider">
+	 	 <li><a><img src="__STATIC__/source/photo/computer/47398405_p0.jpg"></a></li>
+	 	 <li><a><img src="__STATIC__/source/photo/computer/3492333.jpg"></a></li>
+	 	 <li><a><img src="__STATIC__/source/photo/computer/63502155_p0.png"></a></li>
+	 	 <li><a><img src="__STATIC__/source/photo/iPad/57194605_p0.jpg"></a></li>
+	 	 <li><a><img src="__STATIC__/source/photo/computer/61621500_p0.jpg"></a></li>
+	 	 <li><a><img src="__STATIC__/source/photo/mobile/61980962_p0.png"></a></li>
+	 	 <li><a><img src="__STATIC__/source/photo/iPad/50640860_p0.jpg"></a></li>
+	  </ul>
+	  <div class="btns" id="next"><i></i></div>
+	  <div class="btns" id="previous"><i></i></div>
+	  <div id="counter"></div>
+	  
+	  <div id="pagination-wrap">
+		<ul>
+		</ul>
+	  </div> 			 
+	</div>
+<script type="text/javascript" src="__JS__/slide.js"></script>
+</section>
+
+ <section class="container">
+		<div id="computer" class="computer-part">
+			<div class="top">
+				<div class="left">
+					<a>电脑壁纸</a>
+				</div>
+				<div class="right">
+					<a href="computer" target="_blank">更多>></a>
+				</div>
+			</div>
+			<div  class="gallery-wrapper">
+				{foreach $computerList as $v }
+				<div class="image-frame">
+					<a class="galpop-info" data-galpop-group="computer" data-galpop-link="picture?id={$v['Pic_id']}" data-galpop-link-title="Click Here For More Info" data-galpop-link-target="_blank" title="标签：暂无 " href="__STATIC__/{$v['Big_Pic_url']}">
+						<img src="__STATIC__/{$v['Small_Pic_url']}"></a>
+				</div>
+				{/foreach}
+				
+			</div>
+		</div>
+ </section>
+ <section class="container">
+		<div id="mobile" class="mobile-part">
+			<div class="top">
+				<div class="left">
+					<a>手机壁纸</a>
+				</div>
+				<div class="right">
+					<a href="mobile" target="_blank">更多>></a>
+				</div>
+			</div>
+			<div  class="gallery-wrapper">
+				{foreach $mobileList as $v }
+				<div class="image-frame">
+					<a class="galpop-info" data-galpop-group="mobile" data-galpop-link="picture?id={$v['Pic_id']}" data-galpop-link-title="Click Here For More Info" data-galpop-link-target="_blank" title="标签：暂无 " href="__STATIC__/{$v['Big_Pic_url']}">
+						<img src="__STATIC__/{$v['Small_Pic_url']}"></a>
+				</div>
+				{/foreach}
+		
+			</div>
+		</div>
+ </section> 
+ <section class="container">
+		<div id="ipad" class="ipad-part gallery-wrapper">
+			<div class="top">
+				<div class="left">
+					<a>iPad壁纸</a>
+				</div>
+				<div class="right">
+					<a href="ipad" target="_blank">更多>></a>
+				</div>
+			</div>
+			<div  class="gallery-wrapper">
+				{foreach $ipadList as $v }
+				<div class="image-frame">
+					<a class="galpop-info" data-galpop-group="mobile" data-galpop-link="picture?id={$v['Pic_id']}" data-galpop-link-title="Click Here For More Info" data-galpop-link-target="_blank" title="标签：暂无 " href="__STATIC__/{$v['Big_Pic_url']}">
+						<img src="__STATIC__/{$v['Small_Pic_url']}"></a>
+				</div>
+				{/foreach}
+
+			</div>
+		</div>
+
+ </section>
+ <a href="#recommendation" id="back-to-top"></a>
+  <script type="text/javascript" src="__JS__/jquery.galpop.min.js"></script>
+  <script type="text/javascript" src="__JS__/PicOpen&BackToTop.js"></script>
+  {include file='public/footer'}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+	<title>阿卡林の秘宝管理登录页面</title>
+	<meta charset="UTF-8">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="__CSS__/LoginCSS.css">
+	</head>
+	<body>
+	<div class="BG"">
+		<div class="LoginPanel">
+			<div class="login-logo">
+				<a href="{:url('index/')}"><img src="__STATIC__/source/images/login-logo.png"/></a>
+			</div>
+			
+				<form method="post" id="login">
+					<div class="Login-input Login-identity">
+						<img src="__STATIC__/source/images/account.png"/>
+						<input id="UserId" name="email" type="text" placeholder="请输入用户ID或邮箱">
+					</div>
+					<div class="Login-input Login-password">
+						<img src="__STATIC__/source/images/password.png"/>
+						<input id="password" name="password" type="password" placeholder="请输入密码">
+					</div>
+					<div class="Login-input Login-submit">
+						<input id="loginbtn" type="button" value="Login">
+					</div>
+				</form>
+			
+			<div class="Register">
+				<a href="">注册/Register</a>
+				<a href="">找回密码/Reset Password</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"> 
+
+window.onload=function(){
+			var today=new Date();
+			var h=today.getHours();
+			console.log(h);
+			if(h>=18 || h<=6){
+				$('.BG').css("background-image","url(__STATIC__/source/images/Login-BG-night.jpg)");
+			}else{
+				$('.BG').css("background-image","url(__STATIC__/source/images/Login-BG-day.jpg)");
+			};
+	};
+	</script>
+<script type="text/javascript">
+	$(function(){
+		$('#loginbtn').on('click',function(){
+			$.ajax({
+				type:'POST',
+				url:"login/check",
+				data:$('#login').serialize(),
+				dataType:'json',
+				success: function(result){
+					if(result.status == 1){
+						alert(result.massage);
+						window.location.href = "/index";
+					}else if(result.status == 2){
+						alert(result.massage);
+						$('#password').val('');
+					}else{
+						alert(result.massage);
+						$('#UserId').val('');
+						// window.location.href = "/login";
+						
+					}
+					 console.log(result);
+				}
+			})
+		})
+	})
+</script>
+	</body>
+</html>

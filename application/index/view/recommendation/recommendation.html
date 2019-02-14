@@ -1,0 +1,22 @@
+{include file='public/top'}
+<!-- <script src="JS/RecommendPicUpData.js"></script> -->
+
+</head>
+<body>
+ {include file='public/header'/}
+ <div id="panel">
+{volist name='list' id='data'}
+	<div class="box">
+		<div class="pic">
+			<a class="galpop-info" data-galpop-group="recommendation" data-galpop-link="picture?id={$data.Pic_id}" data-galpop-link-title="Click Here For More Info" data-galpop-link-target="_blank" title="风格：{$data.Pic_type} " href=__STATIC__/{$data.Big_Pic_url}>
+				<img src=__STATIC__/{$data.Middle_Pic_url}>
+			</a>
+		</div>
+	</div>
+{/volist}
+ <!-- <div class='box'>
+ <p>很抱歉，没有搜到相关信息！</p>
+ </div> -->
+ </div>
+ <div class="pagination">{$list->render()}</div>
+ {include file='public/bottom'/}

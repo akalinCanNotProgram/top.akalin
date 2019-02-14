@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<head>
+			<meta charset="UTF-8">
+			<link rel="stylesheet" type="text/css" href="__CSS__/Picture.css">
+			<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+		</head>
+		<div class="guid-list">
+		<ul>
+			<li><a href="index">壁纸首页</a></li>
+			<li><a href="computer">电脑壁纸</a></li>
+			<li><a href="mobile">手机壁纸</a></li>
+			<li><a href="ipad">平板壁纸</a></li>
+			<li><a href="screen">筛选壁纸</a></li>
+			<li><a href="recommendation">站长推荐</a></li>
+		</ul>
+		</div>
+		
+		<div class="pic-area">
+			<img src="__STATIC__/{$picInfo['Big_Pic_url']}">
+		</div>
+		
+		<div class="likeANDunlike">
+		<p>上传者：<a href="">{$user}</a></p>
+		<p>时间：{$picInfo['time']}</p>
+		<a title="喜欢，支持一下！"  class="like">{$grade['Pic_Like']}</a>
+		<a title="很抱歉，不喜欢" class="unlike">{$grade['Pic_Unlike']}</a>
+		<p title="历史浏览量" class="views">{$picInfo['hits']}</p>
+		<p>评论数（{$comments->total()}）</p>
+		</div>
+		
+		<div class="label-area">
+			<ul>
+				<li style="font-size:20px">标签:</li>
+				{foreach $labels as $v}
+				<li class="labels"><a href="">{$v}</a></li>
+				{/foreach}
+				<li class="labelsAdd"><a href="">添加</a></li>
+			</ul>
+		</div>
+<script type="text/javascript">
+			//点赞处理
+			$('.like').on('click',function(){
+				$.ajax({
+				type:'get',
+				url:"picture/like",
+				data:'id={$picInfo['Pic_id']}',
+				dataType:'json',
+				success:function(result){
+					if(result.status==1){   //操作成功则更改颜色和更新数据
+						$('.like').css({"background-position-y":'-28px','color':'#f60'});
+						$('.like').text(result.like);
+					}
+					alert(result.massage);
+				}
+			})
+			});
+			//点踩处理
+			$('.unlike').on('click',function(){
+				$.ajax({
+				type:'get',
+				url:"picture/unlike",
+				data:'id={$picInfo['Pic_id']}',
+				dataType:'json',
+				success:function(result){
+					if(result.status==1){  //操作成功则更改颜色和更新数据
+						$('.unlike').css({"background-position-y":'-87px','color':'#f60'});
+						$('.unlike').text(result.unlike);
+					}
+					alert(result.massage);
+				}
+			})
+			})
+
+
+			
+</script>
+
+		{empty name="userInfo"}
+			<div class="unlogin-comment-area">
+					<p>您尚未登陆，请<a class="login">登陆/注册</a>后在进行评论！</p>
+			</div>
+			<!-- 登陆界面 -->
+				<div class="BG">
+					<a id="galpop-close"></a>
+					<div class="login-panel">
+						<div class="login-logo">
+							<a href="{:url('index/')}"><img src="__STATIC__/source/images/login-logo.png"/></a>
+						</div>
+						
+							<form method="post" id="login">
+								<div class="Login-input Login-identity">
+									<img src="__STATIC__/source/images/account.png"/>
+									<input id="UserId" name="email" type="text" placeholder="请输入用户ID或邮箱">
+								</div>
+								<div class="Login-input Login-password">
+									<img src="__STATIC__/source/images/password.png"/>
+									<input id="password" name="password" type="password" placeholder="请输入密码">
+								</div>
+								<div class="Login-input Login-submit">
+									<input id="loginbtn" type="button" value="Login">
+								</div>
+							</form>
+						
+						<div class="Register">
+							<a href="">注册/Register</a>
+							<a href="">找回密码/Reset Password</a>
+						</div>
+					</div>
+				</div>
+<script type="text/javascript">
+	//登陆处理函数
+	$(function(){
+		$('#loginbtn').on('click',function(){
+			$.ajax({
+				type:'POST',
+				url:"login/check",
+				data:$('#login').serialize(),
+				dataType:'json',
+				success: function(result){
+					if(result.status == 1){
+						alert(result.massage);
+						window.location.reload();
+					}else if(result.status == 2){
+						alert(result.massage);
+						$('#password').val('');
+					}else{
+						alert(result.massage);
+						$('#UserId').val('');
+						// window.location.href = "/login";
+						
+					}
+					 console.log(result);
+				}
+			})
+		})
+	})
+//弹出登录框
+ $('.login').on('click',function(){
+ 	$('.BG').fadeToggle(700);
+ })
+ $('#galpop-close').on('click',function(){
+ 	$('.BG').fadeToggle(700);
+ })
+
+
+</script>
+		{else /}
+			<div class="comment-area">
+				<div class="user-face">
+						<a><img src="__STATIC__/source/images/akalin.jpg"/></a>
+						<p>{$userInfo['name']}</p>
+				</div>
+				<div class="comment">
+					<form id="com">
+						<input type="hidden" name="User_id" value="{$userInfo['user_id']}">
+						<input type="hidden" name="Pic_id" value="{$picInfo['Pic_id']}">
+						<textarea type="text" name="Content" class="talk" placeholder="请输入评论内容..."></textarea>
+						<input class="talk-submit" type="button" value="发表评论">
+					</form>
+				</div>
+<script type="text/javascript">
+		//评论处理函数
+	$('.talk-submit').on('click',function(){
+				$.ajax({
+					type:'POST',
+					url:"picture/commentAdd",
+					data:$('#com').serialize(),
+					dataType:'json',
+					success: function(result){
+							if(result){
+								alert("评论成功！正在刷新页面！");
+								window.location.reload();
+							}else{
+								alert("您已退出登录，请重新登录后再评论！");
+								window.location.reload();
+							}
+
+						 console.log(result);
+					}
+				})
+			})
+	// $('.user-face').on('click',function(){
+	// 	console.log($('#com').serialize());
+	// })
+</script>
+			</div>
+		{/empty}
+		
+		
+		<div class="comment-area">
+{empty name='comments'}
+			 <div class='list-none'>
+				<p>这张壁纸暂时没有评论，快来添加你的评论吧！</p>
+			 </div>
+			
+{else /}
+
+	{foreach name="comments" item="v" key="k" }
+	   		<div class="list-item">
+					<div class="user-face">
+						<img data-userId="{$v['User_id']}"  src="__STATIC__/source/images/akalin.jpg"/>
+					</div>
+					<div class="comment">
+						<div class="user-name">
+							<p data-userId="{$v['User_id']}" class="name-text"><a>{$v['name']}</a></p>
+						</div>
+						<p class="text">{$v['Content']}</p>
+						<div class="info">
+							<span class="floor">#{$comments->listNumber($k)}</span>
+							<span class="time">{$v['time']|date="Y-m-d H:i",###}</span>
+						</div>
+					</div>		
+			</div>
+	{/foreach}
+			<div class="pagination">{$comments->render()}</div>
+{/empty}
+
+	   </div>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<section class="tabs-part">
+		<div id="screen" class="tabs">
+			<div class="line">
+				<div class="left">
+					<a>壁纸分类</a> ：
+				</div>
+				<div class="right">
+					<a {$style == "all"? "class='select'" : '' } href="{$type}?style=all">全部</a>
+					{foreach styleList as $v}
+					<a {$style == $v? "class='select'" : '' } href="{$type}?style={$v}">{$v}</a>
+					{/foreach}
+				</div>
+			</div>
+<!-- 			<div class="line">
+				<div class="left">
+					<a>壁纸尺寸</a> ：
+				</div>
+				<div class="right size">
+					<a href="" class="all">全部</a>
+					<a href="">标签2</a>
+					<a href="">标签3</a>
+					<a href="">标签4</a>
+					<a href="">标签5</a>
+					<a href="">标签6</a>
+					<a href="">标签7</a>
+					<a href="">标签8</a>
+					<a href="">标签9</a>
+					<a href="">标签10</a>
+					<a href="">标签11</a>
+					<a href="">标签12</a>
+					<a href="">标签13</a>
+					<a href="">标签14</a>
+					<a href="">标签15</a>
+					<a href="">标签16</a>
+					<a href="">标签17</a>
+					<a href="">标签18</a>
+					<a href="">标签19</a>
+				</div>
+			</div> -->
+			<div class="line">
+				<div class="left">
+					<a float：left>壁纸色系</a> ：
+				</div>
+				<div class="right color">
+					<a {$color == "all"? "class='select'" : '' } id="all" href="{$type}?color=all" class="all">全部</a>
+					<a {$color == "红色"? "class='select'" : '' } href="{$type}?color=红色" class="red"><i></i>红色</a>
+					<a {$color == "橙色"? "class='select'" : '' } href="{$type}?color=橙色" class="orange"><i></i>橙色</a>
+					<a {$color == "黄色"? "class='select'" : '' } href="{$type}?color=黄色" class="yellow"><i></i>黄色</a>
+					<a {$color == "绿色"? "class='select'" : '' } href="{$type}?color=绿色" class="green"><i></i>绿色</a>
+					<a {$color == "蓝色"? "class='select'" : '' } href="{$type}?color=蓝色" class="blue"><i></i>蓝色</a>
+					<a {$color == "紫色"? "class='select'" : '' } href="{$type}?color=紫色" class="purple"><i></i>紫色</a>
+					<a {$color == "青色"? "class='select'" : '' } href="{$type}?color=青色" class="cyan"><i></i>青色</a>
+					<a {$color == "棕色"? "class='select'" : '' } href="{$type}?color=棕色" class="brown"><i></i>棕色</a>
+					<a {$color == "粉色"? "class='select'" : '' } href="{$type}?color=粉色" class="pink"><i></i>粉色</a>
+					<a {$color == "白色"? "class='select'" : '' } href="{$type}?color=白色" class="white"><i></i>白色</a>
+					<a {$color == "黑色"? "class='select'" : '' } href="{$type}?color=黑色" class="black"><i></i>黑色</a>
+				</div>
+			</div>
+		</div>
+</section>

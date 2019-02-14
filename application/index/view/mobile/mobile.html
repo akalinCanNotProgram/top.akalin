@@ -1,0 +1,26 @@
+
+{include file='public/top'/}
+</head>
+<body>
+	
+ {include file='public/header'/}
+ 
+ {include file='public/tabs'/}
+ 
+ <div id="panel">
+{volist name='list' id='data'}
+	<div class="box">
+		<div class="pic">
+			<a class="galpop-info" data-galpop-group="mobile" data-galpop-link="picture?id={$data.Pic_id}" data-galpop-link-title="Click Here For More Info" data-galpop-link-target="_blank" title="标签：暂无 " href=__STATIC__/{$data.Big_Pic_url}>
+				<img src=__STATIC__/{$data.Middle_Pic_url}></a>
+		</div>
+	</div>
+{/volist}
+ <!-- <div class='box'>
+ <p>很抱歉，没有搜到相关信息！</p>
+ </div> -->
+ </div>
+  <div class="page">
+ <div class="pagination">{$list->render()}</div>
+ </div>
+ {include file='public/bottom'/}

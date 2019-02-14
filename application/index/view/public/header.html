@@ -1,0 +1,37 @@
+ <header> 
+ <div id="recommendation" class="navigation">
+	<div class="login-access">
+		{empty name="userInfo"}
+			<a target="_blank" href="login">登录/注册</a>
+		{else /}
+		<a target="_blank" href="loginOut">您好！{$userInfo['name']}</a>
+		{/empty}
+	</div>	
+	<a style="float：left " href="index"><img src="__STATIC__/source/images/logo.png"/></a>
+	<div class="guid-list">
+		<ul>
+			<li{$home.0}><a href="index">壁纸首页</a></li>
+			<li{$home.1}><a href="computer">电脑壁纸</a></li>
+			<li{$home.2}><a href="mobile">手机壁纸</a></li>
+			<li{$home.3}><a href="ipad">iPad壁纸</a></li>
+			<li{$home.4}><a href="screen">筛选壁纸</a></li>
+			<li{$home.5}><a href="recommendation">站长推荐</a></li>
+		</ul>
+	</div>
+	<div class="search-box">
+		<form action="search" target="_blank" method="get" onsubmit="return check(this)" class="search-warp">
+			<div class="text-box">
+				<img src="__STATIC__/source/images/subnavico_new.png" alt=""/>
+				<input class="search-input" type="text" name="pic_label" placeholder="请输入壁纸名称" autocomplete="off">
+			</div>
+				<input class="search-submit" type="submit" value="搜索" />
+		</form>
+	</div>
+	<div class="suggest" id="search-suggest">
+		<ul>
+			
+		</ul>
+	</div>
+<script src="__JS__/SearchBar.js"></script>
+ </div>
+ </header>
