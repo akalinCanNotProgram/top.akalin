@@ -19,7 +19,7 @@ class Base extends Controller{
 		define('USER_ID', Session::get('userId'));
 		define('USER_PASSWORD', Session::get('userInfo')['password']);
     }
-
+        //登陆检测
     	protected function loginCheck()
     	{
     		if(is_null(USER_ID)){
